@@ -111,6 +111,4 @@ mod tests {
         let n = super::fix32::Fix32::from_f32(-2.2_f32);
         assert_eq!(n.pow(5).n, -51535_i32);
     }
-
-    // add here tests made for c++ class
 }

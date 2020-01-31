@@ -1,7 +1,11 @@
 [package]
 name = "fix32"
-version = "1.0.0"
+version = "1.1.0"
 authors = ["JosebaM <josebam@protonmail.com>"]
 edition = "2018"
+license = "GPL-3.0-only"
+keywords = ["fixedpoint", "fixed", "point"]
+readme = "README.md"
+homepage = "https://github.com/josebaMdeL/Fix32"
+repository = "https://github.com/josebaMdeL/Fix32"
 
-[dependencies]

@@ -1,4 +1,4 @@
-# Fix32 V1.0
+# Fix32 V1.1
 
 Easy implementation of fixed point numbers in Rust, using i32 as base. Decimal places should be configured at compile time, to be able to optimize the code at max. This is a personal project and is meant to keep it clear and easily understandable. Anyone can commit improvements or extra characrterisitcs, but all of them have to be clearly explained for a non profesional programmer. I will not add any code I don't understand.
 
@@ -49,6 +49,7 @@ Mayor number in verion will lock all the features that it has and works. Minor v
 * Find a way to adjust decimal positions on compile time. ¿Will ever be possible on Rust?
 * Code comments for documentation using Cargo Doc.
 * Many more tests for everything
+* Think of some benchmarking system to detect performance problems.
 
 ### Aid functions
 
