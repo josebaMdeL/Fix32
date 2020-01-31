@@ -73,6 +73,14 @@ impl Fix32 {
             n: self.n.abs()
         }
     }
+
+    pub fn pow2(self) -> Fix32 {
+        self*self
+    }
+
+   pub fn pow3(self) -> Fix32 {
+        self*self*self
+    }
 }
 
 // Public traits: Operator Overloadings
@@ -116,7 +124,15 @@ impl Div for Fix32 {
     }
 }
 
-// TODO Operator '%' and all +=, -=.... etc
+use std::ops::Rem;
+
+impl Rem for Fix32 {
+    type Output = Fix32;
+
+    fn rem(self, other: Fix32) -> Fix32 {
+        Fix32{n: self.n % other.n}
+    }
+}
 
 
 // Private implementations or auxiliar functions
@@ -127,6 +143,22 @@ fn limit(l: i64) -> i32 {
     if l > internal_constants::MAX_I64 {
         internal_constants::MAX_I32
     } else if l < internal_constants::MIN_I64 {
+        internal_constants::MIN_I32
+    } else {
+        l as i32
+    }
+}
+
+fn limitUp(l: i64) -> i32 {
+    if l > internal_constants::MAX_I64 {
+        internal_constants::MAX_I32
+    } else {
+        l as i32
+    }
+}
+
+fn limitDown(l: i64) -> i32 {
+    if l < internal_constants::MIN_I64 {
         internal_constants::MIN_I32
     } else {
         l as i32
