@@ -81,6 +81,23 @@ impl Fix32 {
    pub fn pow3(self) -> Fix32 {
         self*self*self
     }
+
+    pub fn pow(mut self, n: i32) -> Fix32 {
+        let mut tmp = ONE;
+        let mut b: i32 = n.abs();
+        while b != 0_i32 {
+            if b & 1_i32 == 1_i32 {
+                tmp = tmp*self;
+            }
+            b>>=1;
+            self = self * self;
+        }
+        if n > 0 {
+            tmp
+        } else {
+            ONE/tmp
+        }
+    }
 }
 
 // Public traits: Operator Overloadings
@@ -104,7 +121,7 @@ impl Mul for Fix32 {
     type Output = Fix32;
 
     fn mul(self, other: Fix32) -> Fix32 {
-        Fix32{n: limit((self.n as i64)*(other.n as i64)/internal_constants::SU_I64)}
+        Fix32{n: limit((self.n as i64 * other.n as i64)/internal_constants::SU_I64)}
     }
 }
 
@@ -135,6 +152,11 @@ impl Rem for Fix32 {
 }
 
 
+// Cosntants
+
+const ONE: Fix32 = Fix32 {n: internal_constants::SU_I32};
+
+
 // Private implementations or auxiliar functions
 
 // Input a long and returns the limited int value (overflow protection)
@@ -149,7 +171,7 @@ fn limit(l: i64) -> i32 {
     }
 }
 
-fn limitUp(l: i64) -> i32 {
+fn limit_up(l: i64) -> i32 {
     if l > internal_constants::MAX_I64 {
         internal_constants::MAX_I32
     } else {
@@ -157,7 +179,7 @@ fn limitUp(l: i64) -> i32 {
     }
 }
 
-fn limitDown(l: i64) -> i32 {
+fn limit_down(l: i64) -> i32 {
     if l < internal_constants::MIN_I64 {
         internal_constants::MIN_I32
     } else {

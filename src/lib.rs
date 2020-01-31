@@ -83,5 +83,23 @@ mod tests {
         assert_eq!(n.abs().n, 5124_i32);
     }
 
+    #[test]
+    fn get_pow2() {
+        let n = super::fix32::Fix32::from_f32(-5.124_f32);
+        assert_eq!(n.pow2().n, 26255_i32);
+    }
+
+    #[test]
+    fn get_pow3() {
+        let n = super::fix32::Fix32::from_f32(-5.124_f32);
+        assert_eq!(n.pow3().n, -134530_i32);
+    }
+
+        #[test]
+    fn get_pow() {
+        let n = super::fix32::Fix32::from_f32(-2.2_f32);
+        assert_eq!(n.pow(5).n, -51535_i32);
+    }
+
     // add here tests made for c++ class
 }
