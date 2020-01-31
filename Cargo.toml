@@ -1,6 +1,6 @@
 [package]
 name = "fix32"
-version = "1.1.0"
+version = "1.1.1"
 authors = ["JosebaM <josebam@protonmail.com>"]
 edition = "2018"
 license = "GPL-3.0-only"
@@ -8,4 +8,6 @@ keywords = ["fixedpoint", "fixed", "point"]
 readme = "README.md"
 homepage = "https://github.com/josebaMdeL/Fix32"
 repository = "https://github.com/josebaMdeL/Fix32"
+description = "Easy implementation of fixed point numbers in Rust, using i32 as base. Decimal places should be configured at compile time, to be able to optimize the code at max. This is a personal project and is meant to keep it clear and easily understandable. Anyone can commit improvements or extra characrterisitcs, but all of them have to be clearly explained for a non profesional programmer. I will not add any code I don't understand.
+"
 
