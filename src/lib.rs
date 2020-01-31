@@ -22,7 +22,6 @@ mod tests {
         assert_eq!(n1.n, -1234_i32);
         let n1 = super::fix32::Fix32::with_n(456789_i32);
         assert_eq!(n1.n, 456789_i32);
-
     }
 
     #[test]
@@ -41,7 +40,7 @@ mod tests {
     fn trait_add() {
         let n1 = super::fix32::Fix32::from_f32(1.23456_f32);
         let n2 = super::fix32::Fix32::from_f32(6.5_f32);
-        let res = n1+n2;
+        let res = n1 + n2;
         assert_eq!(res.n, 7734_i32);
     }
 
@@ -49,7 +48,7 @@ mod tests {
     fn trait_sub() {
         let n1 = super::fix32::Fix32::from_f32(1.23456_f32);
         let n2 = super::fix32::Fix32::from_f32(6.5_f32);
-        let res = n1-n2;
+        let res = n1 - n2;
         assert_eq!(res.n, -5266_i32);
     }
 
@@ -57,7 +56,7 @@ mod tests {
     fn trait_mul() {
         let n1 = super::fix32::Fix32::from_f32(1.5_f32);
         let n2 = super::fix32::Fix32::from_f32(-6.5_f32);
-        let res = n1*n2;
+        let res = n1 * n2;
         assert_eq!(res.n, -9750_i32);
     }
 
@@ -65,22 +64,52 @@ mod tests {
     fn trait_div() {
         let n1 = super::fix32::Fix32::from_f32(1.5_f32);
         let n2 = super::fix32::Fix32::from_f32(-6.5_f32);
-        let res = n1/n2;
+        let res = n1 / n2;
         assert_eq!(res.n, -230_i32);
     }
 
-        #[test]
+    #[test]
     fn trait_rem() {
         let n1 = super::fix32::Fix32::from_f32(100_f32);
         let n2 = super::fix32::Fix32::from_f32(10_f32);
-        let res = n1%n2;
+        let res = n1 % n2;
         assert_eq!(res.n, 0_i32);
+    }
+
+    #[test]
+    fn trait_comparing() {
+        let n1 = super::fix32::Fix32::from_f32(100_f32);
+        let n2 = super::fix32::Fix32::from_f32(10_f32);
+        assert_eq!(n1 > n2, true);
+        assert_eq!(n1 >= n2, true);
+        assert_eq!(n1 < n2, false);
+        assert_eq!(n1 <= n2, false);
+        assert_eq!(n1 == n2, false);
+        assert_eq!(n1 != n2, true);
     }
 
     #[test]
     fn get_abs() {
         let n = super::fix32::Fix32::from_f32(-5.124_f32);
         assert_eq!(n.abs().n, 5124_i32);
+    }
+
+    #[test]
+    fn get_pow2() {
+        let n = super::fix32::Fix32::from_f32(-5.124_f32);
+        assert_eq!(n.pow2().n, 26255_i32);
+    }
+
+    #[test]
+    fn get_pow3() {
+        let n = super::fix32::Fix32::from_f32(-5.124_f32);
+        assert_eq!(n.pow3().n, -134530_i32);
+    }
+
+    #[test]
+    fn get_pow() {
+        let n = super::fix32::Fix32::from_f32(-2.2_f32);
+        assert_eq!(n.pow(5).n, -51535_i32);
     }
 
     // add here tests made for c++ class
