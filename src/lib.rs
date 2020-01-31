@@ -69,6 +69,14 @@ mod tests {
         assert_eq!(res.n, -230_i32);
     }
 
+        #[test]
+    fn trait_rem() {
+        let n1 = super::fix32::Fix32::from_f32(100_f32);
+        let n2 = super::fix32::Fix32::from_f32(10_f32);
+        let res = n1%n2;
+        assert_eq!(res.n, 0_i32);
+    }
+
     #[test]
     fn get_abs() {
         let n = super::fix32::Fix32::from_f32(-5.124_f32);

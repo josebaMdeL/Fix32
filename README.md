@@ -21,27 +21,24 @@ Mayor number in verion will lock all the features that it has and works. Minor v
   * Truncate internal decimals (changing self value)
   * Get absolute value.
   * Get powered to 2, 3 or any other positive integer.
-  * Sin, cos and tan functions with lookup tables.
 * Basic numeric constants and values.
 
 ## TODO
 
 ### Next version features
 
-* %,comparing operators and their asign counterparts.
-* Get powered to 2, 3 or any other positive integer.
-* Sin, cos and tan functions with lookup tables.
+* Asign Operators.
+* Get powered of positive integer.
 * Basic numeric constants and values.
 
 ### General
 
 * Find a way to adjust decimal positions on compile time. ¿Will ever be possible on Rust?
 * Code comments for documentation using Cargo Doc.
-* Trigonometric lookup tables (need to study errors first)
 
 ### Aid functions
 
-* Upper and lower only limiter functions. Should imporve perfomrance.
+* (Nothing)
 
 # License
 
